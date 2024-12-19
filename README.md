@@ -1,53 +1,46 @@
-# TuneBot 🎵
-A powerful Discord music bot with YouTube and Spotify support. Stream music from both platforms with simple commands.
+# TuneBot
+
+A Discord music bot with advanced playback controls and Spotify integration.
 
 ## Features
-- 🎵 Play from YouTube URLs or search terms
-- 🎧 Spotify support (tracks, playlists, albums)
-- 📑 Queue management
-- 🔁 Loop mode
-- ⏭️ Skip tracks
-- 🔊 Volume control
-- 🛑 Auto-disconnect when channel is empty
 
-## Quick Start (Docker)
-1. Clone the repository
-2. Create `docker-compose.yml`:
-```yaml
-services:
-  discord-tunebot:
-    container_name: discord-tunebot
-    build: .
-    restart: unless-stopped
-    environment:
-      DISCORD_BOT_TOKEN: "your_bot_token"
-      DISCORD_PREFIX: "!"
-      SPOTIFY_CLIENT_ID: "your_spotify_client_id"
-      SPOTIFY_CLIENT_SECRET: "your_spotify_client_secret"
-```
-3. Add your credentials:
-   - Get Discord token from [Discord Developer Portal](https://discord.com/developers/applications)
-   - Get Spotify credentials from [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
-4. Run: `docker-compose up -d`
+### Music Controls
+- `..play` or `..p` or `..pl` - Play a song from YouTube or Spotify
+- `..queue` or `..q` - Show current queue
+- `..skip` or `..s` or `..sk` - Skip current song
+- `..stop` - Stop playback and clear queue
+- `..pause`, `..resume` - Control playback
+- `..volume <0-100>` or `..v` - Adjust volume
+- `..nowplaying` or `..np` - Show current song info
+- `..playnum <number>` or `..ptn` - Play specific song from queue
+- `..shuffle` or `..sh` - Shuffle the queue
 
-## Commands
-- `!play <query>` - Play from YouTube/Spotify
-- `!skip` - Skip current track
-- `!queue` - Show playlist
-- `!loop` - Toggle loop mode
-- `!volume <0-200>` - Adjust volume
-- `!stop` - Stop and clear queue
-- `!dc` - Disconnect bot
+### Queue Management
+- `..clear` - Clear the queue
+- `..remove <number>` or `..rm` - Remove specific song from queue
+- `..remove @user` or `..rm @user` - Remove all songs by a user
+- `..move <from> <to>` or `..mv` - Move song in queue
+- `..loop` or `..lp` - Toggle queue loop
 
-## Spotify Support
-Just paste any Spotify link:
-```
-!play https://open.spotify.com/track/...   // Single track
-!play https://open.spotify.com/album/...   // Full album
-!play https://open.spotify.com/playlist/... // Playlist
-```
+### System Commands
+- `..join` - Join your voice channel
+- `..leave` or `..le` or `..dis` or `..disconnect` - Leave voice channel
+- `..ping` or `..pg` - Check bot latency
+- `..help` or `..h` - Show help message
 
-## Notes
-- Music is streamed via YouTube
-- Stop playlist processing anytime with !stop
-- Requires Discord bot with Message Content Intent enabled
+### Spotify Integration
+- Support for Spotify tracks and playlists
+- Automatic YouTube search for Spotify tracks
+- Queue management for playlists
+
+## Technical Details
+
+- Uses discord.py for Discord integration
+- yt-dlp for YouTube downloads
+- FFmpeg for audio processing
+- Async/await for non-blocking operations
+- SponsorBlock integration for skipping non-music segments
+
+## Setup
+
+1. Copy the example files:

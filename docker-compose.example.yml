@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  tunebot:
+    build: .
+    container_name: tunebot
+    restart: unless-stopped
+    environment:
+      - DISCORD_BOT_TOKEN=your_bot_token_here
+      - DISCORD_PREFIX=/
+      - SPOTIFY_CLIENT_ID=your_spotify_client_id_here
+      - SPOTIFY_CLIENT_SECRET=your_spotify_client_secret_here
+    init: true

@@ -1,0 +1,18 @@
+{
+    "spotify_connection": {
+        "title": "Spotify Connection Failed",
+        "message": "Could not connect to Spotify API. Check your credentials."
+    },
+    "discord_token": {
+        "title": "Discord Token Invalid",
+        "message": "Bot token is missing or invalid. Check your .env file."
+    },
+    "command_load": {
+        "title": "Commands Failed to Load",
+        "message": "Could not initialize bot commands."
+    },
+    "voice_error": {
+        "title": "Voice Connection Error",
+        "message": "Failed to establish voice connection."
+    }
+} 

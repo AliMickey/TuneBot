@@ -1,7 +1,8 @@
-discord.py
-yt-dlp
-PyNaCl
-async-timeout
-ffmpeg-python
-python-dotenv
-spotipy
+discord.py[voice]>=2.3.2
+python-dotenv>=1.0.0
+yt-dlp>=2023.11.16
+spotipy>=2.23.0
+requests>=2.31.0
+async-timeout>=4.0.3
+PyNaCl>=1.5.0  # For voice support
+aiohttp>=3.8.0
